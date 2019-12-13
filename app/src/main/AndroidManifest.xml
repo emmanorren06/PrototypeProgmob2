@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="prototypeprogmob.com">
+
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".RecyclerKls"></activity>
+        <activity android:name=".Main3Activity" />
+        <activity android:name=".CRUDMatkul" />
+        <activity android:name=".CRUDMhs" />
+        <activity android:name=".CRUDKrs" />
+        <activity android:name=".CRUDDosen" />
+        <activity android:name=".MenuAdmin" />
+        <activity android:name=".MenuDosen" />
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RecyclerDsnActivity" />
+        <activity android:name=".RecyclerMhsActivity" />
+        <activity android:name=".RecyclerKrsActivity" />
+        <activity android:name=".RecyclerMatkulActivity" />
+    </application>
+
+</manifest>
