@@ -31,9 +31,9 @@ import retrofit2.Retrofit;
 
 public class RecyclerDsnActivity extends AppCompatActivity {
     //RecyclerView rvDsn;
+    //private ArrayList<DSN> dsnList;
     private RecyclerView recyclerView;
     private DosenAdapter dsnAdapter;
-    //private ArrayList<DSN> dsnList;
     private ArrayList<DSN> dsnArrayList;
     ProgressDialog progressDialog;
     ImageButton imgButDosen;

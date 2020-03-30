@@ -35,7 +35,7 @@ public class RecyclerMhsActivity extends AppCompatActivity {
     private MHSAdapter mhsAdapter;
     private ArrayList<MhsSI> mhsSIArrayList;
     ProgressDialog progressDialog;
-    ImageButton imgButMhs;
+    //ImageButton imgButMhs;
 
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
@@ -117,15 +117,16 @@ public class RecyclerMhsActivity extends AppCompatActivity {
         progressDialog.show();
 
         GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
-        Call<ArrayList<MhsSI>> call =service.getMhsAll("72170097");
+        Call<ArrayList<MhsSI>> call = service.getMhsAll("72170097");
         call.enqueue(new Callback<ArrayList<MhsSI>>() {
             @Override
             public void onResponse(Call<ArrayList<MhsSI>> call, Response<ArrayList<MhsSI>> response) {
                 progressDialog.dismiss();
+
                 mhsSIArrayList = response.body();
-                recyclerView = (RecyclerView) findViewById(R.id.rvDsn);
-               // mhsSIArrayList = new DosenAdapter(response.body());
-                //  dsnArrayList = response.body();
+                recyclerView = (RecyclerView) findViewById(R.id.rvDataMhs);
+                mhsAdapter = new MHSAdapter(response.body());
+                //  mhsSIArrayList = response.body();
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(RecyclerMhsActivity.this);
                 recyclerView.setLayoutManager(layoutManager);
                 recyclerView.setAdapter(mhsAdapter);
@@ -141,7 +142,7 @@ public class RecyclerMhsActivity extends AppCompatActivity {
         registerForContextMenu(recyclerView);
 
         mhsAdapter = new MHSAdapter(mhsSIArrayList);
-        List<DSN> dsnList;
+        List<MhsSI> mhsSIList;
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(RecyclerMhsActivity.this);
         recyclerView.setLayoutManager(layoutManager);

@@ -56,7 +56,7 @@ public class MenuDosen extends AppCompatActivity {
         imgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MenuDosen.this, RecyclerDsnActivity.class);
+                Intent i = new Intent(MenuDosen.this, RecyclerMhsActivity.class);
                 startActivity(i);
             }
         });
